@@ -7,7 +7,12 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
-  content: [
+    presets: [
+    require("./js/moon-components.js"),
+    require("./js/moon-ui-base-preset.js"),
+  ],
+
+content: [
     "./js/**/*.js",
     "../lib/salad_storybook_web.ex",
     "../lib/salad_storybook_web/**/*.*ex",
@@ -15,13 +20,11 @@ module.exports = {
     "../../../config/*.*exs",
     "../../salad_ui/lib/**/*.ex",
     "../deps/salad_ui/lib/**/*.ex",
+    "./js/**/*.*ex",
+    "./js/**/*.js",
   ],
-  theme: {
-    extend: {
-      colors: require("./tailwind.colors.json"),
-    },
-  },
-  important: ".salad-storybook-web",
+
+  important: ".moon-storybook-web",
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
@@ -54,23 +57,25 @@ module.exports = {
       addVariant("phx-change-loading", [
         ".phx-change-loading&",
         ".phx-change-loading &",
-      ]),
-    ),
+  ]),
+),
 
     // Embeds Heroicons (https://heroicons.com) into your app.css bundle
     // See your `CoreComponents.icon/1` for more information.
     //
     plugin(function ({ matchComponents, theme }) {
-      let iconsDir = path.join(__dirname, "./vendor/heroicons/optimized");
+      let iconsDir = path.join(__dirname, "vendor/heroicons/optimized");
       let values = {};
       let icons = [
         ["", "/24/outline"],
         ["-solid", "/24/solid"],
         ["-mini", "/20/solid"],
+        ["", "/custom"],
       ];
       icons.forEach(([suffix, dir]) => {
         fs.readdirSync(path.join(iconsDir, dir)).forEach((file) => {
           let name = path.basename(file, ".svg") + suffix;
+
           values[name] = { name, fullPath: path.join(iconsDir, dir, file) };
         });
       });
@@ -81,6 +86,9 @@ module.exports = {
               .readFileSync(fullPath)
               .toString()
               .replace(/\r?\n|\r/g, "");
+
+              content = content.replace(/[^A-Za-z0-9\s]/g, (match) => "%" + match.charCodeAt(0).toString(16).toUpperCase());
+
             return {
               [`--hero-${name}`]: `url('data:image/svg+xml;utf8,${content}')`,
               "-webkit-mask": `var(--hero-${name})`,

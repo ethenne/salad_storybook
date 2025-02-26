@@ -1,5 +1,5 @@
 // In production, replace with only the chart types you are using
-import Chart from "chart.js/auto";
+//import Chart from "chart.js/auto";
 
 // utility function to fetch CSS variables
 function cssvar(name) {

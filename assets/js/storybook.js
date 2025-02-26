@@ -38,3 +38,36 @@ window.addEventListener("phx:js-exec", ({ detail }) => {
     liveSocket.execJS(el, el.getAttribute(detail.attr));
   });
 });
+
+
+const targetNode = document.documentElement; 
+
+// Set initial theme
+targetNode.classList.add("light-theme");
+
+const observer = new MutationObserver((mutationsList) => {
+  mutationsList.forEach((mutation) => {
+    if (mutation.attributeName === "class") {
+      if (mutation.target.classList.contains("psb-dark")) {
+
+        observer.disconnect();
+
+        targetNode.classList.remove("light-theme");
+        targetNode.classList.add("dark-theme");
+
+        observer.observe(targetNode, { attributes: true });
+      } else {
+        observer.disconnect();
+
+        targetNode.classList.remove("dark-theme");
+        targetNode.classList.add("light-theme");
+
+        observer.observe(targetNode, { attributes: true });
+
+      }
+    }
+  });
+});
+
+// Start observing
+observer.observe(targetNode, { attributes: true });

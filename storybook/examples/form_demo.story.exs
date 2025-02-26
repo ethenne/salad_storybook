@@ -12,7 +12,7 @@ defmodule Storybook.Examples.FormDemo.Item do
     field :virtual, :boolean, default: false
     field :color, :string, default: "red"
     field :scale, :integer, default: 10
-    field :toggle, :boolean
+    field :chip, :boolean
     field :style, :string
   end
 
@@ -30,6 +30,7 @@ defmodule Storybook.Examples.FormDemo do
   import SaladStorybookWeb.CoreComponents, only: [icon: 1]
   import SaladUI.Button
   import SaladUI.Checkbox
+  import SaladUI.Chip
   import SaladUI.Form
   import SaladUI.Input
   import SaladUI.Label
@@ -38,7 +39,6 @@ defmodule Storybook.Examples.FormDemo do
   import SaladUI.Slider
   import SaladUI.Switch
   import SaladUI.Textarea
-  import SaladUI.Toggle
   import SaladUI.ToggleGroup
 
   alias Storybook.Examples.FormDemo.Item
@@ -170,7 +170,7 @@ defmodule Storybook.Examples.FormDemo do
               <.form_item>
                 <.label>Toggle</.label>
                 <div>
-                  <.toggle field={f[:toggle]} size="sm" variant="outline">Toggle me</.toggle>
+                  <.chip field={f[:chip]} size="sm" variant="outline">Toggle me</.chip>
                 </div>
               </.form_item>
 

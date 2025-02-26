@@ -62,7 +62,7 @@ defmodule SaladStorybook.Helpers.JsxToHeex do
                      SaladUI.HoverCard,
                      SaladUI.RadioGroup,
                      SaladUI.ToggleGroup,
-                     SaladUI.Toggle,
+                     SaladUI.Chip,
                      SaladUI.Accordion,
                      SaladUI.Popover,
                      SaladUI.Collapsible,

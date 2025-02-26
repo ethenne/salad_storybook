@@ -29,15 +29,15 @@ defmodule Storybook.SaladUIComponents.Select do
           placeholder: "Select a fruit"
         },
         template: """
-        <form>
+        <form class="flex flex-col items-center space-y-4">
           <.psb-variation />
-          <.button type="submit" class="w-full mt-2">Submit</.button>
+          <.button type="submit" class="moon-button moon-button-filled">Submit</.button>
         </form>
         """,
         let: :select,
         slots: [
           """
-            <.select_trigger builder={select} class="w-[180px]"/>
+            <.select_trigger builder={select}/>
             <.select_content class="w-full" builder={select}>
               <.select_group>
                 <.select_label>Fruits</.select_label>
