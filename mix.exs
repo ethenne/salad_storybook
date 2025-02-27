@@ -70,7 +70,7 @@ defmodule SaladStorybook.MixProject do
       {:styler, "~> 0.7", only: [:dev, :test], runtime: false},
       {:floki, "~> 0.36"},
       {:faker, "~> 0.18"},
-
+      {:moon_assets, "~> 0.8.6-lv1.0", organization: "coingaming"},
       # salad ui
       {:lucide_icons, "~> 1.1"},
 

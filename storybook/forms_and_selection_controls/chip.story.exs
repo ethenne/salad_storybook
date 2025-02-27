@@ -10,48 +10,7 @@ defmodule Storybook.SaladUIComponents.Chip do
     [
       %Variation{
         id: :default_chip,
-        slots: ["B"]
-      },
-      %Variation{
-        id: :chip_pressed,
-        attributes: %{
-          value: true
-        },
-        slots: ["B"]
-      },
-      %Variation{
-        id: :chip_disabled,
-        attributes: %{
-          disabled: true
-        },
-        slots: ["B"]
-      },
-      %VariationGroup{
-        id: :variant_and_size,
-        description: "Different variants and sizes",
-        variations: [
-          %Variation{
-            id: :variant_outline,
-            attributes: %{
-              variant: "outline"
-            },
-            slots: ["Outline"]
-          },
-          %Variation{
-            id: :size_small,
-            attributes: %{
-              size: "sm"
-            },
-            slots: ["Small"]
-          },
-          %Variation{
-            id: :size_large,
-            attributes: %{
-              size: "lg"
-            },
-            slots: ["Large"]
-          }
-        ]
+        slots: ["Chip"]
       }
     ]
   end

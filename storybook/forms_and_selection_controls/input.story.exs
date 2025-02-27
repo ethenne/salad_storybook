@@ -19,17 +19,31 @@ defmodule Storybook.SaladUIComponents.Input do
     [
       %VariationGroup{
         id: :basic_inputs,
-        variations:
-          for type <- ~w(text number date color)a do
-            %Variation{
-              id: type,
-              attributes: %{
-                type: to_string(type),
-                label: String.capitalize("#{type} input"),
-                placeholder: String.capitalize("#{type} input")
-              }
+        variations: [
+          %Variation{
+            id: :text_input,
+            attributes: %{
+              type: "text",
+              label: "Text input",
+              placeholder: "Text input"
             }
-          end
+          }
+        ]
+      },
+      %Variation{
+        id: :hint_input,
+        attributes: %{
+          type: "text",
+          label: "Input with hint",
+          placeholder: ""
+        },
+        slots: [
+          """
+          <:hint>
+            Enter your name here.
+          </:hint>
+          """
+        ]
       }
     ]
   end

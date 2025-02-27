@@ -2,6 +2,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
   @moduledoc false
   use SaladStorybookWeb, :demo_view
 
+  import MoonAssets
   import SaladStorybookWeb.CoreComponents, only: [icon: 1]
   import SaladUI.Avatar
   import SaladUI.Badge
@@ -24,7 +25,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
     <header class="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <nav class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <.link href="#" class="flex items-center gap-2 text-lg font-semibold md:text-base">
-          <.icon name="hero-rectangle-stack" class="h-6 w-6" />
+          <.icon name="audit" class="w-6 h-6" />
           <span class="sr-only">Acme Inc</span>
         </.link>
         <.link href="#" class="text-foreground transition-colors hover:text-foreground">
@@ -46,14 +47,14 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
       <.sheet>
         <.sheet_trigger target="sheet-content">
           <.button variant="outline" size="icon" class="shrink-0 md:hidden">
-            <.icon name="hero-bars-3" class="h-5 w-5" />
+            <.icon name="menu" class="h-5 w-5" />
             <span class="sr-only">Toggle navigation menu</span>
           </.button>
         </.sheet_trigger>
         <.sheet_content side="left" id="sheet-content">
           <nav class="grid gap-6 text-lg font-medium">
             <.link href="#" class="flex items-center gap-2 text-lg font-semibold">
-              <.icon name="hero-inbox" class="h-6 w-6" />
+              <.icon name="mail" class="h-6 w-6" />
               <span class="sr-only">Acme Inc</span>
             </.link>
             <.link href="#" class="hover:text-foreground">
@@ -77,10 +78,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
       <div class="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <form class="ml-auto flex-1 sm:flex-initial">
           <div class="relative">
-            <.icon
-              name="hero-magnifying-glass"
-              class="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground"
-            />
+            <.icon name="search-02" />
             <.input
               type="text"
               placeholder="Search products..."
@@ -91,7 +89,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
         <.dropdown_menu>
           <.dropdown_menu_trigger>
             <.button variant="secondary" size="icon" class="rounded-full">
-              <.icon name="hero-user-circle" class="h-5 w-5" />
+              <.icon name="user" />
               <span class="sr-only">Toggle user menu</span>
             </.button>
           </.dropdown_menu_trigger>
@@ -115,7 +113,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
             <.card_title class="text-sm font-medium">
               Total Revenue
             </.card_title>
-            <.icon name="hero-currency-dollar" class="h-4 w-4 text-muted-foreground" />
+            <.icon name="dollar" />
           </.card_header>
           <.card_content>
             <div class="text-2xl font-bold">$45,231.89</div>
@@ -129,7 +127,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
             <.card_title class="text-sm font-medium">
               Subscriptions
             </.card_title>
-            <.icon name="hero-users" class="h-4 w-4 text-muted-foreground" />
+            <.icon name="users" />
           </.card_header>
           <.card_content>
             <div class="text-2xl font-bold">+2350</div>
@@ -141,7 +139,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
         <.card>
           <.card_header class="flex flex-row items-center justify-between space-y-0 pb-2">
             <.card_title class="text-sm font-medium">Sales</.card_title>
-            <.icon name="hero-credit-card" class="h-4 w-4 text-muted-foreground" />
+            <.icon name="credit-card" />
           </.card_header>
           <.card_content>
             <div class="text-2xl font-bold">+12,234</div>
@@ -153,7 +151,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
         <.card>
           <.card_header class="flex flex-row items-center justify-between space-y-0 pb-2">
             <.card_title class="text-sm font-medium">Active Now</.card_title>
-            <.icon name="hero-cursor-arrow-rays" class="h-4 w-4 text-muted-foreground" />
+            <.icon name="mouse" />
           </.card_header>
           <.card_content>
             <div class="text-2xl font-bold">+573</div>
@@ -174,7 +172,7 @@ defmodule SaladStorybookWeb.Demo.DashboardThree do
             </div>
             <.button size="sm" class="ml-auto gap-1">
               <.link href="#">
-                View All <.icon name="hero-arrow-up-right" class="h-4 w-4" />
+                View All <.icon name="arrow-up-right" />
               </.link>
             </.button>
           </.card_header>

@@ -4,8 +4,7 @@ defmodule Storybook.SaladUIComponents.SegmentedControl do
 
   def function, do: &SaladUI.SegmentedControl.segmented_control/1
 
-  def imports,
-    do: [{SaladUI.SegmentedControl, [segmented_control_item: 1]}, {SaladStorybookWeb.CoreComponents, [icon: 1]}]
+  def imports, do: [{SaladUI.SegmentedControl, segmented_control_item: 1}, {SaladUI.Icon, [icon: 1]}]
 
   def variations do
     [
@@ -16,13 +15,13 @@ defmodule Storybook.SaladUIComponents.SegmentedControl do
         slots: [
           """
           <.segmented_control_item value="bold" builder={builder} aria-label="Toggle bold">
-          <.icon name="hero-bold" class="h-4 w-4" />
+          <.icon name="text-bold" class="size-space-16" />
           </.segmented_control_item>
           <.segmented_control_item value="italic" builder={builder} aria-label="Toggle italic">
-          <.icon name="hero-italic" class="h-4 w-4" />
+          <.icon name="text-italic" class="size-space-16" />
           </.segmented_control_item>
           <.segmented_control_item value="underline" builder={builder} aria-label="Toggle underline">
-          <.icon name="hero-underline" class="h-4 w-4" />
+          <.icon name="text-underline" class="size-space-16" />
           </.segmented_control_item>
 
           """
@@ -35,13 +34,13 @@ defmodule Storybook.SaladUIComponents.SegmentedControl do
         slots: [
           """
           <.segmented_control_item value="bold" builder={builder} aria-label="Toggle bold">
-          <.icon name="hero-bold" class="h-4 w-4" />
+          <.icon name="text-bold" class="size-space-16" />
           </.segmented_control_item>
           <.segmented_control_item value="italic" builder={builder} aria-label="Toggle italic">
-          <.icon name="hero-italic" class="h-4 w-4" />
+          <.icon name="text-italic" class="size-space-16" />
           </.segmented_control_item>
           <.segmented_control_item value="underline" builder={builder} aria-label="Toggle underline">
-          <.icon name="hero-underline" class="h-4 w-4" />
+          <.icon name="text-underline" class="size-space-16" />
           </.segmented_control_item>
           """
         ]
