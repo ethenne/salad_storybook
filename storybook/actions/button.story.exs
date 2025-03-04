@@ -11,7 +11,7 @@ defmodule Storybook.SaladUIComponents.Button do
     [
       %VariationGroup{
         id: :colors,
-        description: "Color variations with `variant` attribute.",
+        description: "Default button component",
         variations: [
           %Variation{
             id: :color_default,
@@ -22,9 +22,7 @@ defmodule Storybook.SaladUIComponents.Button do
       %Variation{
         id: :custom_class,
         attributes: %{
-          class: "rounded-full",
-          variant: "destructive",
-          size: "lg"
+          class: "rounded-full moon-button-destructive"
         },
         slots: ["Disabled"]
       },
@@ -58,7 +56,7 @@ defmodule Storybook.SaladUIComponents.Button do
           """
           Button
           <:svg>
-            <.icon name="volleyball" class="w-6 h-6" />
+            <.icon name="volleyball" class="size-space-16" />
           </:svg>
           """
         ]
@@ -72,7 +70,7 @@ defmodule Storybook.SaladUIComponents.Button do
           """
           Button
           <:svg>
-            <.icon name="basketball" class="w-6 h-6" />
+            <.icon name="basketball" class="size-space-12" />
           </:svg>
           """
         ]

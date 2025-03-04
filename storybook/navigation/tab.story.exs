@@ -13,7 +13,15 @@ defmodule Storybook.SaladUIComponents.Tab do
 
   # def imports,
   #   do: [
-  #     {Card, [card: 1, card_header: 1, card_title: 1, card_description: 1, card_content: 1, card_footer: 1]},
+  #     {Card,
+  #      [
+  #        card: 1,
+  #        card_header: 1,
+  #        card_title: 1,
+  #        card_description: 1,
+  #        card_content: 1,
+  #        card_footer: 1
+  #      ]},
   #     {Button, [button: 1]},
   #     {Input, [input: 1]},
   #     {Label, [label: 1]},

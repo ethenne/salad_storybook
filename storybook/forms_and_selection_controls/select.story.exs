@@ -50,26 +50,6 @@ defmodule SaladUI.Stories.SelectStory do
         ]
       },
       %Variation{
-        id: :disabled,
-        description: "Disabled select field",
-        attributes: %{
-          id: "disabled-select",
-          label: "Disabled Select",
-          name: "fruit",
-          size: "md",
-          disabled: true
-        },
-        slots: [
-          """
-          <option value="apple">Apple</option>
-          <option value="banana">Banana</option>
-          <option value="blueberry">Blueberry</option>
-          <option value="grapes">Grapes</option>
-          <option value="pineapple">Pineapple</option>
-          """
-        ]
-      },
-      %Variation{
         id: :multiple,
         description: "Multiple select",
         attributes: %{
