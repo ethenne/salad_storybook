@@ -1,9 +1,9 @@
-defmodule SaladStorybook.MixProject do
+defmodule MoonStorybook.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :salad_storybook,
+      app: :moon_storybook,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -16,11 +16,11 @@ defmodule SaladStorybook.MixProject do
 
   defp releases do
     [
-      salad_storybook: [
+      moon_storybook: [
         include_executables_for: [:unix],
         applications: [
           runtime_tools: :permanent,
-          salad_storybook: :permanent
+          moon_storybook: :permanent
         ],
         strip_beams: [
           keep: ["Docs"]
@@ -34,7 +34,7 @@ defmodule SaladStorybook.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {SaladStorybook.Application, []},
+      mod: {MoonStorybook.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -70,14 +70,15 @@ defmodule SaladStorybook.MixProject do
       {:styler, "~> 0.7", only: [:dev, :test], runtime: false},
       {:floki, "~> 0.36"},
       {:faker, "~> 0.18"},
-      {:moon_assets, "~> 0.8.6-lv1.0", organization: "coingaming"},
-      # salad ui
+      {:moon_assets, "~> 0.9.0", organization: "coingaming"},
+      # moon ui
       {:lucide_icons, "~> 1.1"},
 
       # load local salad_ui on dev from local path
+      # TODO: change prod repo for moon_ui
       (Mix.env() == :prod &&
-         {:salad_ui, github: "bluzky/salad_ui", tag: "v0.14.0-rc1"}) ||
-        {:salad_ui, path: "../salad_ui"}
+         {:moon_ui, github: "bluzky/salad_ui", tag: "v0.14.0-rc1"}) ||
+        {:moon_ui, path: "../moon_ui"}
     ]
   end
 

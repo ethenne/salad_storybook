@@ -1,6 +1,6 @@
-defmodule SaladStorybook do
+defmodule MoonStorybook do
   @moduledoc """
-  SaladStorybook keeps the contexts that define your domain
+  MoonStorybook keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

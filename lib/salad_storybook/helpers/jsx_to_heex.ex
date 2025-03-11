@@ -1,4 +1,4 @@
-defmodule SaladStorybook.Helpers.JsxToHeex do
+defmodule MoonStorybook.Helpers.JsxToHeex do
   @moduledoc false
 
   def convert(jsx) do
@@ -33,47 +33,51 @@ defmodule SaladStorybook.Helpers.JsxToHeex do
   end
 
   @default_mapping [
-                     SaladUI.Button,
-                     SaladUI.Card,
-                     SaladUI.DropdownMenu,
-                     SaladUI.Breadcrumb,
-                     SaladUI.Table,
-                     SaladUI.Tabs,
-                     SaladUI.Tooltip,
-                     SaladUI.Sheet,
-                     SaladUI.Input,
-                     SaladUI.Badge,
-                     SaladUI.Textarea,
-                     SaladUI.Label,
-                     SaladUI.Skeleton,
-                     SaladUI.Avatar,
-                     SaladUI.Slider,
-                     SaladUI.Alert,
-                     SaladUI.Dialog,
-                     SaladUI.Pagination,
-                     SaladUI.Checkbox,
-                     SaladUI.Form,
-                     SaladUI.Menu,
-                     SaladUI.Progress,
-                     SaladUI.ScrollArea,
-                     SaladUI.Select,
-                     SaladUI.Switch,
-                     SaladUI.Separator,
-                     SaladUI.HoverCard,
-                     SaladUI.RadioGroup,
-                     SaladUI.ToggleGroup,
-                     SaladUI.Chip,
-                     SaladUI.Accordion,
-                     SaladUI.Popover,
-                     SaladUI.Collapsible,
-                     SaladUI.AlertDialog,
-                     SaladUI.Sidebar,
+                     MoonUI.Button,
+                     MoonUI.Card,
+                     MoonUI.DropdownMenu,
+                     MoonUI.Breadcrumb,
+                     MoonUI.Table,
+                     MoonUI.Tabs,
+                     MoonUI.Tooltip,
+                     MoonUI.Sheet,
+                     MoonUI.Input,
+                     MoonUI.Badge,
+                     MoonUI.Textarea,
+                     MoonUI.Label,
+                     MoonUI.Skeleton,
+                     MoonUI.Avatar,
+                     MoonUI.Slider,
+                     MoonUI.Alert,
+                     MoonUI.Dialog,
+                     MoonUI.Pagination,
+                     MoonUI.Checkbox,
+                     MoonUI.Form,
+                     MoonUI.Menu,
+                     MoonUI.Progress,
+                     MoonUI.ScrollArea,
+                     MoonUI.Select,
+                     MoonUI.Switch,
+                     MoonUI.Separator,
+                     MoonUI.HoverCard,
+                     MoonUI.RadioGroup,
+                     MoonUI.ToggleGroup,
+                     MoonUI.Chip,
+                     MoonUI.Accordion,
+                     MoonUI.Popover,
+                     MoonUI.Collapsible,
+                     MoonUI.AlertDialog,
+                     MoonUI.Sidebar,
                      Lucideicons
                    ]
                    |> Enum.map(& &1.__info__(:functions))
                    |> Enum.concat()
-                   |> Enum.reject(fn {name, arity} -> arity != 1 or String.starts_with?(to_string(name), "__") end)
-                   |> Map.new(fn {name, _} -> {String.replace(to_string(name), "_", ""), ".#{name}"} end)
+                   |> Enum.reject(fn {name, arity} ->
+                     arity != 1 or String.starts_with?(to_string(name), "__")
+                   end)
+                   |> Map.new(fn {name, _} ->
+                     {String.replace(to_string(name), "_", ""), ".#{name}"}
+                   end)
 
   @custom_mapping %{
     "link" => ".link",

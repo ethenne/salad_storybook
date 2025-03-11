@@ -1,4 +1,4 @@
-defmodule SaladStorybookWeb.Telemetry do
+defmodule MoonStorybookWeb.Telemetry do
   @moduledoc false
   use Supervisor
 
@@ -54,25 +54,26 @@ defmodule SaladStorybookWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("salad_storybook.repo.query.total_time",
+      summary("moon_storybook.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("salad_storybook.repo.query.decode_time",
+      summary("moon_storybook.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("salad_storybook.repo.query.query_time",
+      summary("moon_storybook.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("salad_storybook.repo.query.queue_time",
+      summary("moon_storybook.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("salad_storybook.repo.query.idle_time",
+      summary("moon_storybook.repo.query.idle_time",
         unit: {:native, :millisecond},
-        description: "The time the connection spent waiting before being checked out for the query"
+        description:
+          "The time the connection spent waiting before being checked out for the query"
       ),
 
       # VM Metrics
@@ -87,7 +88,7 @@ defmodule SaladStorybookWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {SaladStorybookWeb, :count_users, []}
+      # {MoonStorybookWeb, :count_users, []}
     ]
   end
 end

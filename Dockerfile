@@ -69,7 +69,7 @@ RUN mix compile
 COPY config/runtime.exs config/
 
 COPY rel rel
-RUN mix release salad_storybook
+RUN mix release moon_storybook
 
 # start a new build stage so that the final image will only contain
 # the compiled release and other runtime necessities
@@ -92,7 +92,7 @@ RUN chown nobody /app
 ENV MIX_ENV="prod"
 
 # Only copy the final release from the build stage
-COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/salad_storybook ./
+COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/moon_storybook ./
 
 USER nobody
 

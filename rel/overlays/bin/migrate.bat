@@ -1,1 +1,1 @@
-call "%~dp0\salad_storybook" eval SaladStorybook.Release.migrate
+call "%~dp0\moon_storybook" eval MoonStorybook.Release.migrate

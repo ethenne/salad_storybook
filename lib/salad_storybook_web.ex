@@ -1,12 +1,12 @@
-defmodule SaladStorybookWeb do
+defmodule MoonStorybookWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use SaladStorybookWeb, :controller
-      use SaladStorybookWeb, :html
+      use MoonStorybookWeb, :controller
+      use MoonStorybookWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule SaladStorybookWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: SaladStorybookWeb.Layouts]
+        layouts: [html: MoonStorybookWeb.Layouts]
 
       import Plug.Conn
-      import SaladStorybookWeb.Gettext
+      import MoonStorybookWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule SaladStorybookWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {SaladStorybookWeb.Layouts, :app}
+        layout: {MoonStorybookWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -61,7 +61,7 @@ defmodule SaladStorybookWeb do
   def demo_view do
     quote do
       use Phoenix.LiveView,
-        layout: {SaladStorybookWeb.Layouts, :demo}
+        layout: {MoonStorybookWeb.Layouts, :demo}
 
       unquote(html_helpers())
     end
@@ -93,8 +93,8 @@ defmodule SaladStorybookWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import SaladStorybookWeb.CoreComponents, only: [flash_group: 1]
-      import SaladStorybookWeb.Gettext
+      import MoonStorybookWeb.CoreComponents, only: [flash_group: 1]
+      import MoonStorybookWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -107,9 +107,9 @@ defmodule SaladStorybookWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: SaladStorybookWeb.Endpoint,
-        router: SaladStorybookWeb.Router,
-        statics: SaladStorybookWeb.static_paths()
+        endpoint: MoonStorybookWeb.Endpoint,
+        router: MoonStorybookWeb.Router,
+        statics: MoonStorybookWeb.static_paths()
     end
   end
 

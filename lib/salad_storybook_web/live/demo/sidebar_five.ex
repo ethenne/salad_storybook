@@ -1,7 +1,7 @@
-defmodule SaladStorybookWeb.Demo.SidebarFive do
+defmodule MoonStorybookWeb.Demo.SidebarFive do
   @moduledoc false
-  use SaladStorybookWeb, :demo_view
-  use SaladUI
+  use MoonStorybookWeb, :demo_view
+  use MoonUI
 
   import Lucideicons, except: [import: 1, quote: 1, menu: 1]
 

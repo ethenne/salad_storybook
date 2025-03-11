@@ -1,4 +1,4 @@
-defmodule SaladStorybookWeb.CoreComponents do
+defmodule MoonStorybookWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -15,22 +15,22 @@ defmodule SaladStorybookWeb.CoreComponents do
   """
   use Phoenix.Component
 
-  import SaladStorybookWeb.Gettext
-  import SaladUI.Alert
-  import SaladUI.Form, except: [form: 1]
-  import SaladUI.Icon
-  import SaladUI.Table, except: [table: 1]
+  import MoonStorybookWeb.Gettext
+  import MoonUI.Alert
+  import MoonUI.Form, except: [form: 1]
+  import MoonUI.Icon
+  import MoonUI.Table, except: [table: 1]
 
   alias Phoenix.LiveView.JS
-  alias SaladUI.Button
-  alias SaladUI.Checkbox
-  alias SaladUI.Dialog
-  alias SaladUI.Icon
-  alias SaladUI.Input
-  alias SaladUI.Label
-  alias SaladUI.Slider
-  alias SaladUI.Table
-  alias SaladUI.Textarea
+  alias MoonUI.Button
+  alias MoonUI.Checkbox
+  alias MoonUI.Dialog
+  alias MoonUI.Icon
+  alias MoonUI.Input
+  alias MoonUI.Label
+  alias MoonUI.Slider
+  alias MoonUI.Table
+  alias MoonUI.Textarea
 
   @doc """
   Renders a modal.
@@ -171,9 +171,9 @@ defmodule SaladStorybookWeb.CoreComponents do
   def simple_form(assigns) do
     ~H"""
     <.form :let={f} for={@for} as={@as} {@rest}>
-      <div class="mt-10 space-y-8 bg-white">
+      <div>
         {render_slot(@inner_block, f)}
-        <div :for={action <- @actions} class="mt-2 flex items-center justify-between gap-6">
+        <div :for={action <- @actions}>
           {render_slot(action, f)}
         </div>
       </div>
@@ -246,7 +246,8 @@ defmodule SaladStorybookWeb.CoreComponents do
     values: ~w(checkbox color date datetime-local email file month number password
                range search select tel text textarea time url week)
 
-  attr :field, Phoenix.HTML.FormField, doc: "a form field struct retrieved from the form, for example: @form[:email]"
+  attr :field, Phoenix.HTML.FormField,
+    doc: "a form field struct retrieved from the form, for example: @form[:email]"
 
   attr :errors, :list, default: []
   attr :checked, :boolean, doc: "the checked flag for checkbox inputs"
@@ -254,7 +255,8 @@ defmodule SaladStorybookWeb.CoreComponents do
   attr :options, :list, doc: "the options to pass to Phoenix.HTML.Form.options_for_select/2"
   attr :multiple, :boolean, default: false, doc: "the multiple flag for select inputs"
 
-  attr :rest, :global, include: ~w(accept autocomplete capture cols disabled form list max maxlength min minlength
+  attr :rest, :global,
+    include: ~w(accept autocomplete capture cols disabled form list max maxlength min minlength
                 multiple pattern placeholder readonly required rows size step)
 
   def input(%{field: %Phoenix.HTML.FormField{} = field} = assigns) do
@@ -521,7 +523,8 @@ defmodule SaladStorybookWeb.CoreComponents do
       to: selector,
       time: 300,
       transition:
-        {"transition-all transform ease-out duration-300", "opacity-0 .translate-y-4 sm:.translate-y-0 sm:scale-95",
+        {"transition-all transform ease-out duration-300",
+         "opacity-0 .translate-y-4 sm:.translate-y-0 sm:scale-95",
          "opacity-100 .translate-y-0 sm:scale-100"}
     )
   end
@@ -531,7 +534,8 @@ defmodule SaladStorybookWeb.CoreComponents do
       to: selector,
       time: 200,
       transition:
-        {"transition-all transform ease-in duration-200", "opacity-100 .translate-y-0 sm:scale-100",
+        {"transition-all transform ease-in duration-200",
+         "opacity-100 .translate-y-0 sm:scale-100",
          "opacity-0 .translate-y-4 sm:.translate-y-0 sm:scale-95"}
     )
   end
@@ -559,9 +563,9 @@ defmodule SaladStorybookWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(SaladStorybookWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(MoonStorybookWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(SaladStorybookWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(MoonStorybookWeb.Gettext, "errors", msg, opts)
     end
   end
 

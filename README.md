@@ -1,12 +1,12 @@
-# SaladStorybook
+# MoonStorybook
 
 
 ![Sample page](./img/demo.png)
 
-> Salad UI is a collection of phoenix live view component inspired by [shadui](https://ui.shadcn.com/)
+> Moon UI is a collection of phoenix live view component inspired by [shadui](https://ui.shadcn.com/)
 > Currently these components are under heavy development and cannot be used as separated library.
-
-### [Demo](https://salad-storybook.fly.dev/)
+<!-- TODO: rename salad to moon -->
+<!-- ### [Demo](https://salad-storybook.fly.dev/)
 
 ## How to start Story book.
 
@@ -22,7 +22,7 @@
 ```
 mix deps.get
 mix phx.server
-```
+``` -->
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 

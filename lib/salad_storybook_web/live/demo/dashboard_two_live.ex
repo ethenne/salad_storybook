@@ -1,21 +1,21 @@
-defmodule SaladStorybookWeb.Demo.DashboardTwo do
+defmodule MoonStorybookWeb.Demo.DashboardTwo do
   @moduledoc false
-  use SaladStorybookWeb, :demo_view
+  use MoonStorybookWeb, :demo_view
 
-  import SaladUI.Badge
-  import SaladUI.Breadcrumb
-  import SaladUI.Button
-  import SaladUI.Card
-  import SaladUI.DropdownMenu
-  import SaladUI.Input
-  import SaladUI.Menu
-  import SaladUI.Pagination
-  import SaladUI.Progress
-  import SaladUI.Separator
-  import SaladUI.Sheet
-  import SaladUI.Table
-  import SaladUI.Tabs
-  import SaladUI.Tooltip
+  import MoonUI.Badge
+  import MoonUI.Breadcrumb
+  import MoonUI.Button
+  import MoonUI.Card
+  import MoonUI.DropdownMenu
+  import MoonUI.Input
+  import MoonUI.Menu
+  import MoonUI.Pagination
+  import MoonUI.Progress
+  import MoonUI.Separator
+  import MoonUI.Sheet
+  import MoonUI.Table
+  import MoonUI.Tabs
+  import MoonUI.Tooltip
 
   @impl true
   def mount(_params, _session, socket) do

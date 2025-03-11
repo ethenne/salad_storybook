@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for salad-storybook on 2024-05-17T22:12:48+07:00
+# fly.toml app configuration file generated for moon-storybook on 2024-05-17T22:12:48+07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'salad-storybook'
+app = 'moon-storybook'
 primary_region = 'hkg'
 kill_signal = 'SIGTERM'
 swap_size_mb = 512
@@ -14,7 +14,7 @@ swap_size_mb = 512
   # release_command = '/app/bin/migrate'
 
 [env]
-  PHX_HOST = 'salad-storybook.fly.dev'
+  PHX_HOST = 'moon-storybook.fly.dev'
   PORT = '8080'
 
 [http_service]

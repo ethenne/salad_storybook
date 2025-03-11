@@ -14,12 +14,12 @@ module.exports = {
 
 content: [
     "./js/**/*.js",
-    "../lib/salad_storybook_web.ex",
-    "../lib/salad_storybook_web/**/*.*ex",
+    "../lib/moon_storybook_web.ex",
+    "../lib/moon_storybook_web/**/*.*ex",
     "../**/*.story.exs",
     "../../../config/*.*exs",
-    "../../salad_ui/lib/**/*.ex",
-    "../deps/salad_ui/lib/**/*.ex",
+    "../../moon_ui/lib/**/*.ex",
+    "../deps/moon_ui/lib/**/*.ex",
     "./js/**/*.*ex",
     "./js/**/*.js",
   ],

@@ -1,12 +1,12 @@
-defmodule SaladStorybookWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :salad_storybook
+defmodule MoonStorybookWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :moon_storybook
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_salad_storybook_key",
+    key: "_moon_storybook_key",
     signing_salt: "z2/e91Xs",
     same_site: "Lax"
   ]
@@ -19,9 +19,9 @@ defmodule SaladStorybookWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :salad_storybook,
+    from: :moond_storybook,
     gzip: false,
-    only: SaladStorybookWeb.static_paths()
+    only: MoonStorybookWeb.static_paths()
 
   plug Plug.Static,
     at: "/moon_assets/",
@@ -34,7 +34,7 @@ defmodule SaladStorybookWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :salad_storybook
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :moon_storybook
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -52,5 +52,5 @@ defmodule SaladStorybookWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug SaladStorybookWeb.Router
+  plug MoonStorybookWeb.Router
 end

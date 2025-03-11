@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :salad_storybook, SaladStorybook.Repo,
+config :moon_storybook, MoonStorybook.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "salad_storybook_dev",
+  database: "moon_storybook_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :salad_storybook, SaladStorybook.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :salad_storybook, SaladStorybookWeb.Endpoint,
+config :moon_storybook, MoonStorybookWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -54,22 +54,22 @@ config :salad_storybook, SaladStorybookWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :salad_storybook, SaladStorybookWeb.Endpoint,
+config :moon_storybook, MoonStorybookWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/salad_storybook_web/(controllers|live|components)/(.+/)*.*(ex|heex)$",
+      ~r"lib/moon_storybook_web/(controllers|live|components)/(.+/)*.*(ex|heex)$",
       ~r"storybook/.*(exs)$",
-      ~r"salad_ui/lib/salad_ui/.*ex"
+      ~r"moon_ui/lib/moon_ui/.*ex"
     ]
   ],
-  reloadable_apps: [:salad_ui, :salad_storybook]
+  reloadable_apps: [:moon_ui, :moon_storybook]
 
-config :phoenix_live_reload, :dirs, ["", "../salad_ui"]
+config :phoenix_live_reload, :dirs, ["", "../moon_ui"]
 
 # Enable dev routes for dashboard and mailbox
-config :salad_storybook, dev_routes: true
+config :moon_storybook, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

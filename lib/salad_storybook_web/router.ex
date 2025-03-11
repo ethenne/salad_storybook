@@ -1,5 +1,5 @@
-defmodule SaladStorybookWeb.Router do
-  use SaladStorybookWeb, :router
+defmodule MoonStorybookWeb.Router do
+  use MoonStorybookWeb, :router
 
   import PhoenixStorybook.Router
 
@@ -7,7 +7,7 @@ defmodule SaladStorybookWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {SaladStorybookWeb.Layouts, :root}
+    plug :put_root_layout, html: {MoonStorybookWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -20,7 +20,7 @@ defmodule SaladStorybookWeb.Router do
     storybook_assets()
   end
 
-  scope "/demo", SaladStorybookWeb do
+  scope "/demo", MoonStorybookWeb do
     pipe_through :browser
 
     live "/dashboard-one", Demo.DashboardOne
@@ -34,19 +34,19 @@ defmodule SaladStorybookWeb.Router do
     live "/sidebar-six", Demo.SidebarSix
   end
 
-  scope "/", SaladStorybookWeb do
+  scope "/", MoonStorybookWeb do
     pipe_through :browser
 
-    live_storybook("/", backend_module: SaladStorybookWeb.Storybook)
+    live_storybook("/", backend_module: MoonStorybookWeb.Storybook)
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SaladStorybookWeb do
+  # scope "/api", MoonStorybookWeb do
   #   pipe_through :api
   # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
-  if Application.compile_env(:salad_storybook, :dev_routes) do
+  if Application.compile_env(:moon_storybook, :dev_routes) do
     # If you want to use the LiveDashboard in production, you should put
     # it behind authentication and allow only admins to access it.
     # If your application does not have an admins-only section yet,
@@ -57,7 +57,7 @@ defmodule SaladStorybookWeb.Router do
     #   scope "/dev" do
     #     pipe_through :browser
 
-    #     live_dashboard "/dashboard", metrics: SaladStorybookWeb.Telemetry
+    #     live_dashboard "/dashboard", metrics: MoonStorybookWeb.Telemetry
     #     forward "/mailbox", Plug.Swoosh.MailboxPreview
     #   end
   end

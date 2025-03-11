@@ -1,7 +1,7 @@
-defmodule SaladStorybookWeb.Demo.SidebarOne do
+defmodule MoonStorybookWeb.Demo.SidebarOne do
   @moduledoc false
-  use SaladStorybookWeb, :demo_view
-  use SaladUI
+  use MoonStorybookWeb, :demo_view
+  use MoonUI
 
   @data %{
     versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],

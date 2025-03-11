@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :salad_storybook,
-  ecto_repos: [SaladStorybook.Repo],
+config :moon_storybook,
+  ecto_repos: [MoonStorybook.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :salad_storybook, SaladStorybookWeb.Endpoint,
+config :moon_storybook, MoonStorybookWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
-    formats: [html: SaladStorybookWeb.ErrorHTML, json: SaladStorybookWeb.ErrorJSON],
+    formats: [html: MoonStorybookWeb.ErrorHTML, json: MoonStorybookWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: SaladStorybook.PubSub,
+  pubsub_server: MoonStorybook.PubSub,
   live_view: [signing_salt: "WDQ/FSqo"]
 
 # Configures the mailer
@@ -29,7 +29,7 @@ config :salad_storybook, SaladStorybookWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :salad_storybook, SaladStorybook.Mailer, adapter: Swoosh.Adapters.Local
+config :moon_storybook, MoonStorybook.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
@@ -69,7 +69,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :salad_ui, :error_translator_function, {SaladStorybookWeb.CoreComponents, :translate_error}
+config :moon_ui, :error_translator_function, {MoonStorybookWeb.CoreComponents, :translate_error}
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

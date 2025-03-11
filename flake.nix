@@ -1,5 +1,5 @@
 {
-  description = "Salad StoryBook";
+  description = "Moon StoryBook";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";

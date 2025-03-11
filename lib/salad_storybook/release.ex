@@ -1,9 +1,9 @@
-defmodule SaladStorybook.Release do
+defmodule MoonStorybook.Release do
   @moduledoc """
   Used for executing DB release tasks when run in production without Mix
   installed.
   """
-  @app :salad_storybook
+  @app :moon_storybook
 
   def migrate do
     load_app()

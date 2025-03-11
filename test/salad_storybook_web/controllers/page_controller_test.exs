@@ -1,5 +1,5 @@
-defmodule SaladStorybookWeb.PageControllerTest do
-  use SaladStorybookWeb.ConnCase
+defmodule MoonStorybookWeb.PageControllerTest do
+  use MoonStorybookWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

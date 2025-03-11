@@ -1,6 +1,6 @@
-defmodule SaladStorybookWeb.Layouts do
+defmodule MoonStorybookWeb.Layouts do
   @moduledoc false
-  use SaladStorybookWeb, :html
+  use MoonStorybookWeb, :html
 
   embed_templates "layouts/*"
 end
