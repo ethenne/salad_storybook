@@ -19,7 +19,7 @@ defmodule MoonStorybookWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :moond_storybook,
+    from: :moon_storybook,
     gzip: false,
     only: MoonStorybookWeb.static_paths()
 

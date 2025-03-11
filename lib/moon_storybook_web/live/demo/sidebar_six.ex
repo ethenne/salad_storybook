@@ -118,18 +118,15 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
     projects: [
       %{
         name: "Design Engineering",
-        url: "#",
-        icon: &frame/1
+        url: "#"
       },
       %{
         name: "Sales & Marketing",
-        url: "#",
-        icon: &pie_chart/1
+        url: "#"
       },
       %{
         name: "Travel",
-        url: "#",
-        icon: &map/1
+        url: "#"
       }
     ]
   }
