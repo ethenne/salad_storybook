@@ -224,8 +224,8 @@ defmodule MoonStorybookWeb.Demo.SidebarOne do
     ~H"""
     <.sidebar_menu>
       <.sidebar_menu_item>
-        <.dropdown_menu class="block">
-          <.dropdown_menu_trigger>
+        <.dropdown class="block">
+          <.dropdown_trigger>
             <.sidebar_menu_button
               size="lg"
               class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
@@ -243,15 +243,15 @@ defmodule MoonStorybookWeb.Demo.SidebarOne do
               </div>
               <Lucideicons.chevrons_up_down class="ml-auto" />
             </.sidebar_menu_button>
-          </.dropdown_menu_trigger>
-          <.dropdown_menu_content class="w-full" align="start">
+          </.dropdown_trigger>
+          <.dropdown_content class="w-full" align="start">
             <.menu>
               <.menu_item :for={item <- @versions}>
                 v<%= item %>
               </.menu_item>
             </.menu>
-          </.dropdown_menu_content>
-        </.dropdown_menu>
+          </.dropdown_content>
+        </.dropdown>
       </.sidebar_menu_item>
     </.sidebar_menu>
     """

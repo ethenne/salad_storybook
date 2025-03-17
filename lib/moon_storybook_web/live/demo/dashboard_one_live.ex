@@ -6,10 +6,10 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
   import MoonUI.Breadcrumb
   import MoonUI.Button
   import MoonUI.Card
-  import MoonUI.DropdownMenu
+  import MoonUI.Dropdown
   import MoonUI.Input
   import MoonUI.Menu
-  import MoonUI.Sheet
+  import MoonUI.Drower
   import MoonUI.Skeleton
   import MoonUI.Table
   import MoonUI.Tabs
@@ -112,14 +112,14 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
       </aside>
       <div class="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <header class="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-          <.sheet>
-            <.sheet_trigger target="sheet">
+          <.drower>
+            <.drower_trigger target="sheet">
               <.button size="icon" variant="outline" class="sm:hidden">
                 <Lucideicons.panel_left class="h-5 w-5" />
                 <span class="sr-only">Toggle Menu</span>
               </.button>
-            </.sheet_trigger>
-            <.sheet_content id="sheet" side="left" class="sm:max-w-xs">
+            </.drower_trigger>
+            <.drower_content id="sheet" side="left" class="sm:max-w-xs">
               <nav class="grid gap-6 text-lg font-medium">
                 <.link
                   href="#"
@@ -157,8 +157,8 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                   <Lucideicons.line_chart class="h-5 w-5" /> Settings
                 </.link>
               </nav>
-            </.sheet_content>
-          </.sheet>
+            </.drower_content>
+          </.drower>
           <.breadcrumb class="hidden md:flex">
             <.breadcrumb_list>
               <.breadcrumb_item>
@@ -186,8 +186,8 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
               class="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
             />
           </div>
-          <.dropdown_menu>
-            <.dropdown_menu_trigger>
+          <.dropdown>
+            <.dropdown_trigger>
               <.button variant="outline" size="icon" class="overflow-hidden rounded-full">
                 <img
                   src={~p"/images/avatar02.png"}
@@ -197,8 +197,8 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                   class="overflow-hidden rounded-full"
                 />
               </.button>
-            </.dropdown_menu_trigger>
-            <.dropdown_menu_content align="end">
+            </.dropdown_trigger>
+            <.dropdown_content align="end">
               <.menu>
                 <.menu_label>My Account</.menu_label>
                 <.menu_separator />
@@ -207,8 +207,8 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                 <.menu_separator />
                 <.menu_item>Logout</.menu_item>
               </.menu>
-            </.dropdown_menu_content>
-          </.dropdown_menu>
+            </.dropdown_content>
+          </.dropdown>
         </header>
         <main class="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <.tabs :let={builder} default="all" id="tabs">
@@ -222,16 +222,16 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                 </.tabs_trigger>
               </.tabs_list>
               <div class="ml-auto flex items-center gap-2">
-                <.dropdown_menu>
-                  <.dropdown_menu_trigger>
+                <.dropdown>
+                  <.dropdown_trigger>
                     <.button variant="outline" size="sm" class="h-8 gap-1">
                       <Lucideicons.list_filter class="h-3.5 w-3.5" />
                       <span class="sr-only sm:not-sr-only sm:whitespace-nowrap">
                         Filter
                       </span>
                     </.button>
-                  </.dropdown_menu_trigger>
-                  <.dropdown_menu_content align="end">
+                  </.dropdown_trigger>
+                  <.dropdown_content align="end">
                     <.menu>
                       <.menu_label>Filter by</.menu_label>
                       <.menu_separator />
@@ -243,8 +243,8 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                         Archived
                       </.menu_item>
                     </.menu>
-                  </.dropdown_menu_content>
-                </.dropdown_menu>
+                  </.dropdown_content>
+                </.dropdown>
                 <.button size="sm" variant="outline" class="h-8 gap-1">
                   <Lucideicons.file class="h-3.5 w-3.5" />
                   <span class="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -309,21 +309,21 @@ defmodule MoonStorybookWeb.Demo.DashboardOne do
                           <%= product.created_at |> Calendar.strftime("%Y-%m-%d %I:%M:%S %p") %>
                         </.table_cell>
                         <.table_cell>
-                          <.dropdown_menu>
-                            <.dropdown_menu_trigger>
+                          <.dropdown>
+                            <.dropdown_trigger>
                               <.button aria-haspopup="true" size="icon" variant="ghost">
                                 <Lucideicons.ellipsis class="h-4 w-4" />
                                 <span class="sr-only">Toggle menu</span>
                               </.button>
-                            </.dropdown_menu_trigger>
-                            <.dropdown_menu_content align="end">
+                            </.dropdown_trigger>
+                            <.dropdown_content align="end">
                               <.menu>
                                 <.menu_label>Actions</.menu_label>
                                 <.menu_item>Edit</.menu_item>
                                 <.menu_item>Delete</.menu_item>
                               </.menu>
-                            </.dropdown_menu_content>
-                          </.dropdown_menu>
+                            </.dropdown_content>
+                          </.dropdown>
                         </.table_cell>
                       </.table_row>
                     </.table_body>

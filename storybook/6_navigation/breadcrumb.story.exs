@@ -19,7 +19,7 @@ defmodule Storybook.MoonUIComponents.Breadcrumb do
          breadcrumb_ellipsis: 1,
          breadcrumb_page: 1
        ]},
-      {DropdownMenu, [dropdown_menu: 1, dropdown_menu_trigger: 1, dropdown_menu_content: 1]},
+      {Dropdown, [dropdown: 1, dropdown_trigger: 1, dropdown_content: 1]},
       {Menu,
        [menu: 1, menu_label: 1, menu_separator: 1, menu_item: 1, menu_shortcut: 1, menu_group: 1]}
     ]
@@ -58,19 +58,19 @@ defmodule Storybook.MoonUIComponents.Breadcrumb do
       #       </.breadcrumb_item>
       #       <.breadcrumb_separator />
       #       <.breadcrumb_item>
-      #         <.dropdown_menu>
-      #           <.dropdown_menu_trigger class="flex items-center gap-1">
+      #         <.dropdown>
+      #           <.dropdown_trigger class="flex items-center gap-1">
       #             <.breadcrumb_ellipsis class="h-4 w-4" />
       #             <span class="sr-only">toggle menu</span>
-      #           </.dropdown_menu_trigger>
-      #           <.dropdown_menu_content align="start">
+      #           </.dropdown_trigger>
+      #           <.dropdown_content align="start">
       #             <.menu>
       #               <.menu_item>Documentation</.menu_item>
       #               <.menu_item>Themes</.menu_item>
       #               <.menu_item>Github</.menu_item>
       #             </.menu>
-      #           </.dropdown_menu_content>
-      #         </.dropdown_menu>
+      #           </.dropdown_content>
+      #         </.dropdown>
       #       </.breadcrumb_item>
       #       <.breadcrumb_separator />
       #       <.breadcrumb_item>

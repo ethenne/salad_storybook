@@ -5,7 +5,7 @@ defmodule Storybook.Examples.ServerEvent do
   import MoonUI.Button
   import MoonUI.Input
   import MoonUI.Label
-  import MoonUI.Sheet
+  import MoonUI.Drower
 
   alias Phoenix.LiveView.JS
 
@@ -21,17 +21,17 @@ defmodule Storybook.Examples.ServerEvent do
   @impl true
   def render(assigns) do
     ~H"""
-    <.sheet>
-      <.sheet_trigger target="my-sheet">
+    <.drower>
+      <.drower_trigger target="my-sheet">
         <.button variant="outline">Open</.button>
-      </.sheet_trigger>
-      <.sheet_content id="my-sheet">
-        <.sheet_header>
-          <.sheet_title>Edit profile</.sheet_title>
-          <.sheet_description>
+      </.drower_trigger>
+      <.drower_content id="my-sheet">
+        <.drower_header>
+          <.drower_title>Edit profile</.drower_title>
+          <.drower_description>
             Make changes to your profile here. Click save when you're done.
-          </.sheet_description>
-        </.sheet_header>
+          </.drower_description>
+        </.drower_header>
         <div class="grid gap-4 py-4">
           <div class="grid grid-cols-4 items-center gap-4">
             <.label for="name" class="text-right">
@@ -46,21 +46,21 @@ defmodule Storybook.Examples.ServerEvent do
             <.input id="username" value="@peduarte" class="col-span-3" />
           </div>
         </div>
-        <.sheet_footer>
-          <.sheet_close target="my-sheet">
+        <.drower_footer>
+          <.drower_close target="my-sheet">
             <.button
               type="submit"
               phx-click={JS.exec("phx-hide-sheet", to: "#my-sheet") |> JS.push("save")}
             >
               Save changes
             </.button>
-          </.sheet_close>
+          </.drower_close>
           <.button phx-click={JS.push("update")}>
             Close from back-end
           </.button>
-        </.sheet_footer>
-      </.sheet_content>
-    </.sheet>
+        </.drower_footer>
+      </.drower_content>
+    </.drower>
     """
   end
 

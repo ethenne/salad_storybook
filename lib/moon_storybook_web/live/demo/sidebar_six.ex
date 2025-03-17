@@ -200,8 +200,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
     ~H"""
     <.sidebar_menu>
       <.sidebar_menu_item>
-        <.dropdown_menu class="block">
-          <.as_child tag={&dropdown_menu_trigger/1}
+        <.dropdown class="block">
+          <.as_child tag={&dropdown_trigger/1}
             child={&sidebar_menu_button/1}
             size="lg"
             class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
@@ -219,7 +219,7 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
             </div>
             <.chevrons_up_down class="ml-auto" />
           </.as_child>
-          <.dropdown_menu_content
+          <.dropdown_content
             class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
             align="start"
             side="right"
@@ -234,9 +234,9 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
                   <.dynamic tag={team.logo} class="size-4 shrink-0" />
                 </div>
                 <%= team.name %>
-                <.dropdown_menu_shortcut>
+                <.dropdown_shortcut>
                   ⌘<%= index + 1 %>
-                </.dropdown_menu_shortcut>
+                </.dropdown_shortcut>
               </.menu_item>
 
               <.menu_separator></.menu_separator>
@@ -249,8 +249,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
                 </div>
               </.menu_item>
             </.menu>
-          </.dropdown_menu_content>
-        </.dropdown_menu>
+          </.dropdown_content>
+        </.dropdown>
       </.sidebar_menu_item>
     </.sidebar_menu>
     """
@@ -305,8 +305,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
       </.sidebar_group_label>
       <.sidebar_menu>
         <.sidebar_menu_item :for={item <- @projects}>
-          <.dropdown_menu style="-ml-8 block">
-            <.dropdown_menu_trigger show_on_hover>
+          <.dropdown style="-ml-8 block">
+            <.dropdown_trigger show_on_hover>
               <.as_child tag={&sidebar_menu_button/1} child="a" href={item.url}>
                 <.dynamic tag={item.icon} />
                 <span>
@@ -319,8 +319,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
                   More
                 </span>
               </.sidebar_menu_action>
-            </.dropdown_menu_trigger>
-            <.dropdown_menu_content class="w-48 rounded-lg" side="right" align="start">
+            </.dropdown_trigger>
+            <.dropdown_content class="w-48 rounded-lg" side="right" align="start">
               <.menu>
                 <.menu_item>
                   <.folder class="text-muted-foreground h-4 w-4 mr-2" />
@@ -342,8 +342,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
                   </span>
                 </.menu_item>
               </.menu>
-            </.dropdown_menu_content>
-          </.dropdown_menu>
+            </.dropdown_content>
+          </.dropdown>
         </.sidebar_menu_item>
         <.sidebar_menu_item>
           <.sidebar_menu_button class="text-sidebar-foreground/70">
@@ -362,8 +362,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
     ~H"""
     <.sidebar_menu>
       <.sidebar_menu_item>
-        <.dropdown_menu class="block">
-          <.as_child tag={&dropdown_menu_trigger/1}
+        <.dropdown class="block">
+          <.as_child tag={&dropdown_trigger/1}
             child={&sidebar_menu_button/1}
             size="lg"
             class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
@@ -384,7 +384,7 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
             </div>
             <.chevrons_up_down class="ml-auto size-4" />
           </.as_child>
-          <.dropdown_menu_content
+          <.dropdown_content
             class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
             side="right"
             align="end"
@@ -432,8 +432,8 @@ defmodule MoonStorybookWeb.Demo.SidebarSix do
                 <.log_out class="w-4 h-4 mr-2" /> Log out
               </.menu_item>
             </.menu>
-          </.dropdown_menu_content>
-        </.dropdown_menu>
+          </.dropdown_content>
+        </.dropdown>
       </.sidebar_menu_item>
     </.sidebar_menu>
     """

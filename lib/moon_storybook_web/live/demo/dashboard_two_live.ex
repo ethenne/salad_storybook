@@ -6,13 +6,13 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
   import MoonUI.Breadcrumb
   import MoonUI.Button
   import MoonUI.Card
-  import MoonUI.DropdownMenu
+  import MoonUI.Dropdown
   import MoonUI.Input
   import MoonUI.Menu
   import MoonUI.Pagination
   import MoonUI.Progress
   import MoonUI.Separator
-  import MoonUI.Sheet
+  import MoonUI.Drower
   import MoonUI.Table
   import MoonUI.Tabs
   import MoonUI.Tooltip
@@ -139,16 +139,16 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
       </aside>
       <div class="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <header class="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-          <.sheet>
-            <.sheet_trigger target="side">
+          <.drower>
+            <.drower_trigger target="side">
               <.button size="icon" variant="outline" class="sm:hidden">
                 <Lucideicons.panel_left class="h-5 w-5" />
                 <span class="sr-only">
                   Toggle Menu
                 </span>
               </.button>
-            </.sheet_trigger>
-            <.sheet_content id="side" side="left" class="sm:max-w-xs">
+            </.drower_trigger>
+            <.drower_content id="side" side="left" class="sm:max-w-xs">
               <nav class="grid gap-6 text-lg font-medium">
                 <.link
                   href="#"
@@ -188,8 +188,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                   <Lucideicons.line_chart class="h-5 w-5" /> Settings
                 </.link>
               </nav>
-            </.sheet_content>
-          </.sheet>
+            </.drower_content>
+          </.drower>
           <.breadcrumb class="hidden md:flex">
             <.breadcrumb_list>
               <.breadcrumb_item>
@@ -223,8 +223,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
               class="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
             />
           </div>
-          <.dropdown_menu>
-            <.dropdown_menu_trigger>
+          <.dropdown>
+            <.dropdown_trigger>
               <.button variant="outline" size="icon" class="overflow-hidden rounded-full">
                 <img
                   src={~p"/images/avatar02.png"}
@@ -234,8 +234,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                   class="overflow-hidden rounded-full"
                 />
               </.button>
-            </.dropdown_menu_trigger>
-            <.dropdown_menu_content align="end">
+            </.dropdown_trigger>
+            <.dropdown_content align="end">
               <.menu>
                 <.menu_label>
                   My Account
@@ -252,8 +252,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                   Logout
                 </.menu_item>
               </.menu>
-            </.dropdown_menu_content>
-          </.dropdown_menu>
+            </.dropdown_content>
+          </.dropdown>
         </header>
         <main class="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
           <div class="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
@@ -325,16 +325,16 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                   </.tabs_trigger>
                 </.tabs_list>
                 <div class="ml-auto flex items-center gap-2">
-                  <.dropdown_menu>
-                    <.dropdown_menu_trigger>
+                  <.dropdown>
+                    <.dropdown_trigger>
                       <.button variant="outline" size="sm" class="h-7 gap-1 text-sm">
                         <Lucideicons.list_filter class="h-3.5 w-3.5" />
                         <span class="sr-only sm:not-sr-only">
                           Filter
                         </span>
                       </.button>
-                    </.dropdown_menu_trigger>
-                    <.dropdown_menu_content align="end">
+                    </.dropdown_trigger>
+                    <.dropdown_content align="end">
                       <.menu>
                         <.menu_label>
                           Filter by
@@ -350,8 +350,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                           Refunded
                         </.menu_item>
                       </.menu>
-                    </.dropdown_menu_content>
-                  </.dropdown_menu>
+                    </.dropdown_content>
+                  </.dropdown>
                   <.button size="sm" variant="outline" class="h-7 gap-1 text-sm">
                     <Lucideicons.file class="h-3.5 w-3.5" />
                     <span class="sr-only sm:not-sr-only">
@@ -619,16 +619,16 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                       Track Order
                     </span>
                   </.button>
-                  <.dropdown_menu>
-                    <.dropdown_menu_trigger>
+                  <.dropdown>
+                    <.dropdown_trigger>
                       <.button size="icon" variant="outline" class="h-8 w-8">
                         <Lucideicons.ellipsis_vertical class="h-3.5 w-3.5" />
                         <span class="sr-only">
                           More
                         </span>
                       </.button>
-                    </.dropdown_menu_trigger>
-                    <.dropdown_menu_content align="end">
+                    </.dropdown_trigger>
+                    <.dropdown_content align="end">
                       <.menu>
                         <.menu_item>
                           Edit
@@ -641,8 +641,8 @@ defmodule MoonStorybookWeb.Demo.DashboardTwo do
                           Trash
                         </.menu_item>
                       </.menu>
-                    </.dropdown_menu_content>
-                  </.dropdown_menu>
+                    </.dropdown_content>
+                  </.dropdown>
                 </div>
               </.card_header>
               <.card_content class="p-6 text-sm">
